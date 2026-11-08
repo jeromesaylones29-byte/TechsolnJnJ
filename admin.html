@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Admin | J&J Computer Shop</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="theme.css">
+<link rel="stylesheet" href="glass.css">
+<link rel="stylesheet" href="stage.css">
+<link rel="stylesheet" href="type.css">
+<link rel="stylesheet" href="admin.css">
+</head>
+<body class="admin-page">
+<header class="top">
+  <div class="container nav-inner">
+    <div class="nav-left">
+      <a class="logo" href="index.html"><span class="mark">J&amp;J</span><span>Admin <span class="amp">Panel</span></span></a>
+    </div>
+    <div class="ad-who">
+      <span id="adEmail"></span>
+      <a class="btn btn-outline" href="index.html">View shop</a>
+      <button class="btn btn-outline" id="adSignOut" type="button" hidden>Sign out</button>
+    </div>
+  </div>
+</header>
+<main class="container ad-main">
+  <section id="adLogin" class="ad-card ad-login" hidden>
+    <h1>Admin sign in</h1>
+    <p class="ad-muted">Use the account that was made an admin in Supabase.</p>
+    <form id="adLoginForm" novalidate>
+      <div class="field"><label for="adLoginEmail">Email</label><input id="adLoginEmail" type="email" autocomplete="username" required></div>
+      <div class="field"><label for="adLoginPass">Password</label><input id="adLoginPass" type="password" autocomplete="current-password" required></div>
+      <p class="auth-error" id="adLoginErr" role="alert"></p>
+      <button class="btn btn-block" type="submit">Sign in</button>
+    </form>
+  </section>
+  <section id="adNotice" class="ad-card ad-login" hidden></section>
+  <section id="adApp" hidden>
+    <nav class="ad-tabs" id="adTabs">
+      <button data-tab="overview" class="on">Overview</button>
+      <button data-tab="orders">Orders</button>
+      <button data-tab="customers">Customers</button>
+      <button data-tab="items">Item list</button>
+      <button data-tab="inbox">Inbox <span class="ad-badge" id="adUnread" hidden>0</span></button>
+    </nav>
+    <div id="adPanel"></div>
+  </section>
+</main>
+<div id="adToast" class="ad-toast" role="status" aria-live="polite"></div>
+<script src="guard.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js"></script>
+<script src="config.js"></script>
+<script src="admin.js"></script>
+</body>
+</html>
